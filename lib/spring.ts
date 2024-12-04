@@ -1,7 +1,17 @@
 type EasingFn = (t: number) => number;
 
 /**
- * returns a spring easing function for gsap using duration/bounce parameters
+ * returns a spring easing function for gsap using duration/bounce parameters, which is known as perceptual duration introduces in Apple's WWDC 2023
+ *
+ * @example
+ * ```ts
+ * gsap.to(".element", {
+ * 		duration: 0.8,
+ * 		x: 100,
+ * 		// animate with duration = 0.8, bounce = 0.15
+ * 		ease: pdSpring(0.8, 0.15),
+ * });
+ * ```
  */
 export function pdSpring(duration = 0.8, bounce = 0.3): EasingFn {
 	if (duration <= 0) {
@@ -17,6 +27,16 @@ export function pdSpring(duration = 0.8, bounce = 0.3): EasingFn {
 
 /**
  * returns a spring easing function for gsap using stiffness/damping/mass parameters
+ *
+ * @example
+ * ```ts
+ * gsap.to(".element", {
+ * 		duration: 0.8,
+ * 		x: 100,
+ * 		// animate with stiffness = 100, damping = 10, mass = 1
+ * 		ease: spring(100, 10, 1),
+ * });
+ * ```
  */
 export function spring(
 	stiffness: number,
