@@ -1,7 +1,7 @@
 {
 	"name": "gsap-spring",
 	"license": "MIT",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "module",
 	"main": "src/spring.ts",
 	"module": "src/spring.ts",
